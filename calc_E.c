@@ -25,6 +25,10 @@ E = 1 + 1 / 1! + 1 / 2! + 1 / 3! + 1 / N!
             return 1;
         }
 
-        printf("you've got it right");
+        for (int i = 1; i <= N; i++) {
+            fatorial *= i;
+        }
+       
+        printf("O fatorial de %d = %llu\n", N, fatorial);
         return 0;
     }
