@@ -20,6 +20,7 @@ E = 1 + 1 / 1! + 1 / 2! + 1 / 3! + 1 / N!
             printf("User input is not a valid positive number");
             return 1;
         }
+        
         if (N < 0) {
             printf("User input is not a valid positive numer");
             return 1;
