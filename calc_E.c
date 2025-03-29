@@ -12,6 +12,8 @@ E = 1 + 1 / 1! + 1 / 2! + 1 / 3! + 1 / N!
 
     int main() {
         int N;
+        float calc = 2 / 2 / 3 / 7;
+        unsigned long long fatorial = 1;
 
         printf("Enter a valid positive number: ");
         if(scanf("%d", &N) != 1) {
