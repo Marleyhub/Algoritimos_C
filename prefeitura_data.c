@@ -26,7 +26,7 @@ int main () {
     }
     
     for (int j = 0; j < salario_length; j++) {
-        printf("Salarioe: %.2f", salario[j]);
+        printf("Salarie: %.2f\n", salario[j]);
     }
     return 0; 
 }
