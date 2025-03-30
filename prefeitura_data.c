@@ -15,14 +15,18 @@ A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dad
 int main () {
     float salario [15];
     int filhos [15];
-    int maiorSalario = 0;
+    float maiorSalario = 0;
     int ate100 = 0;
     int salario_length = sizeof salario / sizeof salario[0];
 
-    printf("Digite até no maximo 15 numeros inteiros que representem salários: /n");
+    printf("write down 15 salaries: ");
     for (int i = 0; i < salario_length; i++) {
-        scanf("%f", &salario);
+        printf("Salarie %d: ", i + 1);
+        scanf("%f", &salario[i]);
     }
-    printf("%f", salario);
+    
+    for (int j = 0; j < salario_length; j++) {
+        printf("Salarioe: %.2f", salario[j]);
+    }
     return 0; 
 }
