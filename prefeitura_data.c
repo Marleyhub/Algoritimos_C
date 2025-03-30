@@ -27,13 +27,18 @@ int main () {
         if (salario[i] > maiorSalario){
             maiorSalario = salario[i];
         }
+
+        if(salario[i] <= 100) {
+            ate100++;
+        }
     }
     
     for (int j = 0; j < salario_length; j++) {
         printf("Salarie -- R$:%.2f\n", salario[j]);
     }
 
-    printf ("Maior salario: %.2f", maiorSalario);
+    printf("Maior salario: %.2f\n", maiorSalario);
+    printf("There is %d salaries that are under or equal R$100,00\n", ate100);
 
     return 0; 
 }
