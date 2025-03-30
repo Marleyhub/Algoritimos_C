@@ -23,10 +23,17 @@ int main () {
     for (int i = 0; i < salario_length; i++) {
         printf("Salarie %d: ", i + 1);
         scanf("%f", &salario[i]);
+
+        if (salario[i] > maiorSalario){
+            maiorSalario = salario[i];
+        }
     }
     
     for (int j = 0; j < salario_length; j++) {
-        printf("Salarie: %.2f\n", salario[j]);
+        printf("Salarie -- R$:%.2f\n", salario[j]);
     }
+
+    printf ("Maior salario: %.2f", maiorSalario);
+
     return 0; 
 }
