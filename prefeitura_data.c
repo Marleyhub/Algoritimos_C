@@ -22,6 +22,7 @@ int main () {
     float salario_med = 0;
 
     printf("write down 15 salaries: ");
+    
     for (int i = 0; i < salario_length; i++) {
         printf("Salarie %d: ", i + 1);
         scanf("%f", &salario[i]);
