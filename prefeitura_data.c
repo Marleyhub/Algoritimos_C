@@ -13,16 +13,19 @@ A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dad
 
 int main () {
     float salario [15];
-    int filhos [15];
+    float salario_length = sizeof salario / sizeof salario[0];
     float maiorSalario = 0;
     int ate100 = 0;
     float ate100_percent = 0;
-    float salario_length = sizeof salario / sizeof salario[0];
     float salario_total = 0;
     float salario_med = 0;
 
-    printf("write down 15 salaries: ");
+    int filhos [15];
+    int filhos_length = sizeof filhos / sizeof filhos[0]; 
     
+
+    printf("write down 15 salaries: ");
+
     for (int i = 0; i < salario_length; i++) {
         printf("Salarie %d: ", i + 1);
         scanf("%f", &salario[i]);
@@ -30,17 +33,13 @@ int main () {
         if (salario[i] > maiorSalario){
             maiorSalario = salario[i];
         }
-
         if(salario[i] <= 100) {
             ate100++;
         }
-
         salario_total += salario[i];
     }
-
-    for (int j = 0; j < salario_length; j++) {
-        printf("Salarie -- R$:%.2f\n", salario[j]);
-    }
+    for (int j = 0; j < filhos; j++)
+   
 
     ate100_percent = (ate100 * 100) / salario_length;
     salario_med = salario_total / salario_length;
