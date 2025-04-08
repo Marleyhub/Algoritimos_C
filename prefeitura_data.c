@@ -21,11 +21,12 @@ int main () {
     float salario_med = 0;
 
     int filhos [15];
-    int filhos_length = sizeof filhos / sizeof filhos[0]; 
+    int filhos_length = sizeof filhos / sizeof filhos[0];
+    int filhos_med = 0;
+    int filhos_total = 0;
     
 
     printf("write down 15 salaries: ");
-
     for (int i = 0; i < salario_length; i++) {
         printf("Salarie %d: ", i + 1);
         scanf("%f", &salario[i]);
@@ -38,15 +39,23 @@ int main () {
         }
         salario_total += salario[i];
     }
-    for (int j = 0; j < filhos; j++)
-   
 
+    printf("Write down how many sons per family: \n");
+    for (int j = 0; j < filhos_length; j++) {
+        printf("Family-%d: ", j + 1);
+        scanf("%d", &filhos[j]);
+
+        filhos_total += filhos[j];
+    }
+   
     ate100_percent = (ate100 * 100) / salario_length;
     salario_med = salario_total / salario_length;
+    filhos_med = filhos_total / filhos_length;
 
     printf("The percentual of salaries that are under or equal R$100,00 is %.2f percent\n", ate100_percent);
     printf("The media of all salaries are: R$%.2f \n", salario_med);
     printf("The highest salarie is R$%.2f \n", maiorSalario);
+    printf("The media of suns per family is %d\n", filhos_med);
 
     return 0; 
 }
