@@ -10,6 +10,7 @@ e conta quantos destes valores são negativos, escrevendo esta informação.
 #include <stdio.h>
 
 int main() {
+    
     int a [5] = {-1, 2, 3, 4, -6};
     int size = sizeof(a) / sizeof(a[0]);
     int count = 0;
@@ -19,6 +20,8 @@ int main() {
             count ++;
         }
     }
+
+// output
     printf("there are %d negative numbers", count);
     return 0;
 }
