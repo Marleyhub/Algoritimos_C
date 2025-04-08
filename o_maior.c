@@ -10,16 +10,15 @@ anos serão necessários para que Zé seja maior que Chico.
 
 int main () {
 
-    float chico_heigth = 1.50f;
-    float ze_heigth = 1.10f;
-
+    float chico_height = 1.50f;
+    float ze_height = 1.10f;
     int year = 0;
 
-    while (chico_heigth > ze_heigth) {
+    while (chico_height > ze_height) {
+            chico_height += 0.02f;
+            ze_height += 0.03f;
             year++;
-            chico_heigth += 0.02;
-            ze_heigth += 0.03;
     }
-    printf("there will be needed %d yers to ze be higher then chico", year);
+    printf("there will be needed %d years to ze be higher then chico", year);
     return 0;
 }
