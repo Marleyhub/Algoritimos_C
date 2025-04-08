@@ -11,23 +11,20 @@ A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dad
 
 #include <stdio.h>
 
+#define SIZE 15
+
 int main () {
-    float salario [15];
-    float salario_length = sizeof salario / sizeof salario[0];
-    float maiorSalario = 0;
+    float salario [SIZE];
+    float maiorSalario = 0.0f;
     int ate100 = 0;
-    float ate100_percent = 0;
-    float salario_total = 0;
-    float salario_med = 0;
-
-    int filhos [15];
-    int filhos_length = sizeof filhos / sizeof filhos[0];
-    int filhos_med = 0;
-    int filhos_total = 0;
+    float salario_total = 0.0f;
     
-
+    int filhos [SIZE];
+    float filhos_total = 0.0f;
+    
+ // Input Salaries
     printf("write down 15 salaries: ");
-    for (int i = 0; i < salario_length; i++) {
+    for (int i = 0; i < SIZE; i++) {
         printf("Salarie %d: ", i + 1);
         scanf("%f", &salario[i]);
 
@@ -40,22 +37,26 @@ int main () {
         salario_total += salario[i];
     }
 
+// Input Suns Number
     printf("Write down how many sons per family: \n");
-    for (int j = 0; j < filhos_length; j++) {
+    for (int j = 0; j < SIZE; j++) {
         printf("Family-%d: ", j + 1);
         scanf("%d", &filhos[j]);
 
         filhos_total += filhos[j];
     }
    
-    ate100_percent = (ate100 * 100) / salario_length;
-    salario_med = salario_total / salario_length;
-    filhos_med = filhos_total / filhos_length;
+// Calculations
+    float ate100_percent = (ate100 * 100) / SIZE;
+    float salario_med = salario_total / SIZE;
+    float filhos_med = filhos_total / SIZE;
 
+// Output Results
+    printf("\n--- Results ---\n");
     printf("The percentual of salaries that are under or equal R$100,00 is %.2f percent\n", ate100_percent);
     printf("The media of all salaries are: R$%.2f \n", salario_med);
     printf("The highest salarie is R$%.2f \n", maiorSalario);
-    printf("The media of suns per family is %d\n", filhos_med);
+    printf("The media of suns per family is %.2f\n", filhos_med);
 
     return 0; 
 }
