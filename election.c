@@ -13,6 +13,7 @@ Como finalizador do conjunto de votos, tem-se o valor 0.
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main () {
 
@@ -22,12 +23,51 @@ int main () {
     int input;
 
     array = (int *)malloc(capacity * sizeof(int));
-    if(array == NULL) {
+    
         if (array == NULL) {
             printf("Memory allocation failed. \n");
             return 1;
         }
-    }
-    return 0;
 
-}
+        printf(
+            "In this election you have the following options to vote: \n"
+            "1 - dog\n"
+            "2 - satan\n"
+            "3 - Exu tiriri\n"
+            "4 - bolsonaro\n"
+            "5 - null vote\n"
+            "6 - white vote\n"
+            "0 - stop voting\n"
+        );
+
+        while(1) {
+            printf("Write down the number that represents your candidate option:\n", size + 1);
+            scanf("%d", &input);
+
+            if (input < 0 || input > 6) {
+                printf ("Your vote does not represent any option");
+            }
+
+            if (input == 0) break;
+        }
+
+        if (size == capacity) {
+            capacity *= 2;
+            int *temp = realloc(array, capacity * sizeof(int));
+            if (temp == NULL) {
+                printf("Memory reallocation failed.\n");
+                free(array);
+                return 1;
+            }
+            array = temp;
+        }
+
+        array[size++] = input;
+
+        for (int i = 0; i < size; i++) {
+            printf("the result is %d", array[i]);
+        }
+        return 0;
+    }
+  
+
