@@ -16,5 +16,18 @@ Como finalizador do conjunto de votos, tem-se o valor 0.
 
 int main () {
 
+    int *array = NULL; 
+    int size = 0;
+    int capacity = 10;
+    int input;
+
+    array = (int *)malloc(capacity * sizeof(int));
+    if(array == NULL) {
+        if (array == NULL) {
+            printf("Memory allocation failed. \n");
+            return 1;
+        }
+    }
     return 0;
+
 }
