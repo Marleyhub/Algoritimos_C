@@ -1,5 +1,6 @@
 /*
-6. Em uma eleição presidencial existem quatro candidatos. Os votos são informados através de códigos. Os dados utilizados para a contagem dos votos obedecem à seguinte
+6. Em uma eleição presidencial existem quatro candidatos. Os votos são informados através de códigos. Os dados utilizados para a contagem dos votos 
+obedecem à seguinte
 codificação:
 - 1,2,3,4 = voto para os respectivos candidatos;
 - 5 = voto nulo;
