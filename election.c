@@ -32,7 +32,7 @@ int main () {
         printf(
             "In this election you have the following options to vote: \n"
             "1 - dog\n"
-            "2 - satan\n"
+            "2 - satanas\n"
             "3 - Exu tiriri\n"
             "4 - bolsonaro\n"
             "5 - null vote\n"
