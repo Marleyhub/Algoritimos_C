@@ -41,32 +41,32 @@ int main () {
         );
 
         while(1) {
-            printf("Write down the number that represents your candidate option:\n", size + 1);
+            printf("Write down the number that represents your candidate option:\n my vote goes to:");
             scanf("%d", &input);
 
             if (input < 0 || input > 6) {
                 printf ("Your vote does not represent any option");
+                continue;
             }
 
             if (input == 0) break;
-        }
 
-        if (size == capacity) {
-            capacity *= 2;
-            int *temp = realloc(array, capacity * sizeof(int));
-            if (temp == NULL) {
-                printf("Memory reallocation failed.\n");
-                free(array);
-                return 1;
+            if (size == capacity) {
+                capacity *= 2;
+                int *temp = realloc(array, capacity * sizeof(int));
+                if (temp == NULL) {
+                    printf("Memory reallocation failed.\n");
+                    free(array);
+                    return 1;
+                }
+                array = temp;
             }
-            array = temp;
+
+            array[size++] = input;
         }
 
-        array[size++] = input;
-
-        for (int i = 0; i < size; i++) {
-            printf("the result is %d", array[i]);
-        }
+        printf("array: %p *array: %p,", array, *(array + 2));
+        
         return 0;
     }
   
