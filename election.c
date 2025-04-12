@@ -22,6 +22,13 @@ int main () {
     int capacity = 10;
     int input;
 
+    int count_dog = 0;
+    int count_satanas = 0;
+    int count_exu = 0;
+    int count_bolsonaro = 0;
+    int count_null = 0;
+    int count_white = 0;
+
     array = (int *)malloc(capacity * sizeof(int));
     
         if (array == NULL) {
