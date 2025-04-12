@@ -45,7 +45,7 @@ int main () {
             scanf("%d", &input);
 
             if (input < 0 || input > 6) {
-                printf ("Your vote does not represent any option");
+                printf ("Your vote does not represent any option, try again\n");
                 continue;
             }
 
