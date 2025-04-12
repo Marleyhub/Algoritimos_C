@@ -64,7 +64,7 @@ int main () {
 
             array[size++] = input;
         }
-
+  
         printf("array: %p *array: %p,", array, *(array + 2));
         
         return 0;
