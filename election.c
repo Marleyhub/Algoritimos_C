@@ -63,11 +63,13 @@ int main () {
             }
 
             array[size++] = input;
-            for (int i = 0; i < size; i++) {
-                printf("Array[%d]: %p\n", i, (void*)array[i]);
-            }
+        }
+        
+        for (int i = 0; i < size; i++) {
+            printf("Array[%d]: %p\n", i, (void*)array[i]);
         }
         printf("array: %p *array: %p,", array, *(array + 2));
+
         
         return 0;
     }
