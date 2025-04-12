@@ -71,12 +71,34 @@ int main () {
 
             array[size++] = input;
         }
-        
-        for (int i = 0; i < size; i++) {
-            printf("Array[%d]: %p\n", i, (void*)array[i]);
-        }
-        printf("array: %p *array: %p,", array, *(array + 2));
 
+        for (int i = 0; i < size; i++) {
+            //printf("Array[%d]: %d\n", i, array[i]);
+            if(array[i] == 1)
+                count_dog++;
+            if(array[i] == 2)
+                count_satanas++;
+            if(array[i] == 3)
+                count_exu++;
+            if(array[i] == 4)
+                count_bolsonaro++;
+            if(array[i] == 5)
+                count_null++;
+            if(array[i] == 6)
+                count_white++;
+        }
+        
+        //printf("array: %p *array: %p,", array, *(array + 2));
+        printf(
+            "Theres goes the final result of the election\n"
+            "Dog with %d many votes\n"
+            "Satanas with %d many votes\n"
+            "Exu tiriri with %d many votes\n"
+            "Bolsonaro with %d many votes\n"
+            "%d null votes\n"
+            "%d white votes\n",
+            count_dog, count_satanas, count_exu, count_bolsonaro, count_null, count_white
+        );
         
         return 0;
     }
