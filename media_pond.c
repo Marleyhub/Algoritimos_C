@@ -12,7 +12,12 @@ int main(){
     int code;
     int i = 1;
     float note[SIZE];
-    int weight;
+    float calc = 0.0f; 
+    float high_note_w = 0.0f;
+    float note_w = 0.0f;
+    int max_weight = 4;
+    int weight = 3;
+    float high_note = 0.0f;
 
     printf ("Write down the student code:\n");
     scanf("%d", &code);
@@ -20,10 +25,18 @@ int main(){
     while (i <= SIZE) {
         printf("Write down the note %d\n", i);
         scanf("%f", &note[i]);
-        printf("%.2f\n", note[i]);
+
+        if (note[i] > high_note){
+            high_note = note[i];
+            high_note_w = high_note * max_weight;
+            } else {
+            note_w += note[i] * weight;    
+            }
+
         i++;
     }
-    
-   
+        calc = (high_note_w + note_w) / (weight + weight + max_weight);
+
+        printf("The weighted average is %.2f", calc);
     return 0;
 }
