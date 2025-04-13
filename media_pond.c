@@ -16,6 +16,7 @@ int main(){
 
     printf ("Write down the student code:\n");
     scanf("%d", &code);
+    
     while (i <= SIZE) {
         printf("Write down the note %d\n", i);
         scanf("%f", &note[i]);
