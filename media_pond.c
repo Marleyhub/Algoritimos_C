@@ -35,7 +35,6 @@ int main(){
     
             if (note[i] > high_note)
                 high_note = note[i];
-
             i++;
             }
 
