@@ -15,7 +15,6 @@ int main(){
     int max_weight = 4;
     int weight = 3;
 
-
     while(1){
         printf ("Write down the student code (negative to exit):\n");
         scanf("%d", &code);
