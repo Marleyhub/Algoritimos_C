@@ -11,6 +11,8 @@ int main (){
     int *array;
 
     printf("How long should be the progresson: \n"); scanf("%d", &n);
+    printf("which is the first term of the progression: \n"); scanf("%d", &a1);
+    printf("which is the progression rate: \n"); scanf("%d", &r);
     while(i < n) {
     
         int prog = a1 + prog;
