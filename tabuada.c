@@ -13,28 +13,10 @@ n x n = n^2
 
 int main () {
 
-    int *array = NULL;
-    int capacity = 19;
-    int size = 0;
-    array = (int *)malloc(capacity * sizeof(int));
+    int array[20];
+    int i, j;
 
-    if (array == NULL) {
-        printf("Memory allocation failed. \n");
-        return 1;
-    }
+    printf("write down 20 number to make a multiplication table: \n");
 
-    printf("Write down 20 numbers to make a multiplication table: \n");
-    
-    while(size <= capacity) {
-        printf("Number-%d: ", size + 1);
-        scanf("%d:",  array + size);
-        size++;
-    }
-    
-    for(int i = 0; i <= capacity; i++){
-        printf("%d\n", array[i]);
-    }
-  
-        
-    
+    return 0; 
 }
