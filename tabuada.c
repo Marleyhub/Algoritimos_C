@@ -22,6 +22,7 @@ int main () {
 
     for (i = 0; i < SIZE; i++) {
         scanf("Number-%d: %d", i + 1, array[i]);
+        printf("%d", array[i]);
     }
 
     return 0; 
