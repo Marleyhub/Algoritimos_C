@@ -11,12 +11,18 @@ n x n = n^2
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE 20
+
 int main () {
 
-    int array[20];
+    int array[SIZE];
     int i, j;
 
     printf("write down 20 number to make a multiplication table: \n");
+
+    for (i = 0; i < SIZE; i++) {
+        scanf("Number-%d: %d", i + 1, array[i]);
+    }
 
     return 0; 
 }
