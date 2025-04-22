@@ -54,5 +54,7 @@ int main () {
        printf("\n");
     }
 
+    free(tabuadas);
+    
     return 0; 
 }
