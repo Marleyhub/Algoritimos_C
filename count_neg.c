@@ -6,7 +6,6 @@ e conta quantos destes valores são negativos, escrevendo esta informação.
 
 */
 
-
 #include <stdio.h>
 
 int main() {
