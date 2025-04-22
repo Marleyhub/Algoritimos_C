@@ -12,9 +12,11 @@ int main(){
     int *numbers = NULL;
     unsigned long long *fatored = malloc(size * sizeof(unsigned long long));
 
+    // input
     printf("Write down how many fatorials do you want: \n");
     scanf("%d", &size);
 
+    // allocating memory
     numbers = (int *)malloc(size * sizeof(int));
     fatored = (unsigned long long *)malloc(size * sizeof(unsigned long long));
 
@@ -25,12 +27,14 @@ int main(){
 
     printf("Write down the numbers that you want to have the fatorial: \n");
 
+    // inputs
     while (i < size){
         printf("Number-%d:", i + 1);
         scanf("%d", &numbers[i]);
         i++;
     }
 
+    // fatirial calc
     for (int j = 0; j < size; j++){
         unsigned long long fatorial = 1;
         for (int k = 1; k <= numbers[j]; k++){
@@ -38,7 +42,8 @@ int main(){
         }
         fatored[j] = fatorial;
     }
-    
+
+    // result
     printf("**********results*********\n");
     for (i = 0; i < size; i++){
         printf("%d! = %llu\n", numbers[i], fatored[i]);
