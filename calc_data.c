@@ -15,7 +15,6 @@ int main() {
     int size = 0; 
     int capacity = 2; 
     float total = 0;
-    float media = 0;
     int count_pos = 0;
     int count_neg = 0;
     char buffer[BUFFER_SIZE];  
@@ -73,27 +72,24 @@ int main() {
 
     }
 
-    int numbers_size = (sizeof(numbers) / sizeof(int));
-    if (numbers_size == 0) {
+    if (size == 0) {
         printf("No numbers were entered.\n");
         free(numbers);
         return 0;
     }
 
-    media = total / numbers_size;
-    printf("The arithmetic mean of all numbers is %.2f\n", media);
+    float media = total / size;
+    float neg_cent = (count_neg * 100) / size;
+    float pos_cent = (count_pos * 100) / size;
    
-    float neg_cent = (count_neg * 100) / numbers_size;
-    float pos_cent = (count_pos * 100) / numbers_size;
-    printf("The percentage of negative numbers is %.2f%%, with %d many negatives\n", neg_cent, count_neg);
-    printf("The percentage of positive numbers is %.2f%%, with %d many positives\n", pos_cent, count_pos);
-
     // Print all collected numbers
     printf("\nYou entered:\n");
     for (int i = 0; i < size; i++) {
-        printf("%d ", numbers[i]);
+        printf("%d \n", numbers[i]);
     }
-
+    printf("The percentage of negative numbers is %.2f%%, with %d many negatives\n", neg_cent, count_neg);
+    printf("The percentage of positive numbers is %.2f%%, with %d many positives\n", pos_cent, count_pos);
+    printf("The arithmetic media of all numbers is %.2f\n", media);
     printf("\n");
 
     free(numbers);
