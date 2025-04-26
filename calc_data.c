@@ -62,7 +62,10 @@ int main() {
     }
 
     int i = 0;
-    while(i < (sizeof(int) / sizeof(numbers)))
+    while(i < (sizeof(numbers) / sizeof(int))){
+        
+        i++;
+    }
     // Print all collected numbers
     printf("\nYou entered:\n");
     for (int i = 0; i < size; i++) {
