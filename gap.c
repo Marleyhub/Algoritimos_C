@@ -43,10 +43,12 @@ int main() {
             continue;
         }
 
+        //memory allocation
         numbers = (int *)malloc(capacity * sizeof(int));
 
         numbers[size++] = input;
 
+        //memory reallocation
         if (capacity == size){
             capacity *= 2;
             int *temp = (int *)realloc(numbers, capacity * sizeof(int));
