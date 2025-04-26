@@ -5,12 +5,14 @@ entrada de dados deve terminar quando for lido um número negativo.
 */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define BUFFER_SIZE 100
 
 int main() {
 
-    int buffer[100];
+    char buffer[BUFFER_SIZE];
     int *numbers = NULL;
     int size = 1; 
     int capacity = 2;
@@ -23,7 +25,7 @@ int main() {
     printf("write down how many number u want:\n");
 
     while(1) {
-        printf("Number-%d\n", size);
+        printf("Number-%d ", size);
         fgets(buffer, BUFFER_SIZE, stdin);
 
         //Remove the new line charactor 
@@ -31,14 +33,14 @@ int main() {
 
         //exiting
         if(strcmp(buffer, "exit") == 0){
-            printf("Calculating...");
+            printf("Calculating...\n\n\n");
             break;
         }
 
-        // checks if it is a valid number or anything else exit
+        // checks if it is a valid number or anything else to exit
         char *endptr;
         int input = strtol(buffer, &endptr, 10);
-        if (*endptr != "\0"){
+        if (*endptr != '\0'){
             printf("Please type enter numbers \"exit\" ");
             continue;
         }
@@ -60,7 +62,23 @@ int main() {
             numbers = temp;
         }
 
+        if (input >= 0 && input <=25)
+            count_0_25++;
+        else if (input >= 26 & input <=50)
+            count_26_50++;
+        else if (input >= 51 && input <=75)
+            count_51_75++;
+        else if (input >= 76 && input <=100)
+            count_76_100++;
         i++;
     }
+
+    printf(
+        "The are %d numbers between 0 and 25\n"
+        "The are %d numbers between 26 and 50\n"
+        "The are %d numbers between 51 and 75\n"
+        "The are %d numbers between 78 and 100\n",
+        count_0_25, count_26_50, count_51_75, count_76_100
+    );
     return 0;
 }
