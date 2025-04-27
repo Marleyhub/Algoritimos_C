@@ -15,7 +15,7 @@ void printHeader() {
 
 int main() {
     double valor;
-    int linha = 0; // Conta quantas linhas já imprimimos
+    int linha = 0; 
 
     printHeader();
 
@@ -32,7 +32,6 @@ int main() {
 
         linha++;
 
-        // Se a cada 20 linhas, repetir o cabeçalho
         if (linha % 20 == 0) {
             printHeader();
         }
