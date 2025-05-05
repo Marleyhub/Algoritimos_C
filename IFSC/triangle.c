@@ -13,18 +13,23 @@ int main (){
     while(1){
         printf("Write down a base and a higth for your triangle (-1 o exit)\n");
 
+        //Reads base
         printf("First, the base:\n");
         scanf("%f", &base);
 
+        //if -1 break
         if(base == -1)
         break;
 
-        printf("Second, the higth:\n");
+        //reads hight
+        printf("Second, the hight:\n");
         scanf("%f", &height);
 
+         //if -1 break
         if(base == -1)
             break;
 
+        // calculates area
         area = (base * height)/2;
     
         printf("The area of this triangle is: %.4f\n\n", area);
