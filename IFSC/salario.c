@@ -14,23 +14,42 @@ Liquido.
 
 int main(){
 
+    int *workerData;
+    int n, i;
+    int size, capacity;
     float HT, VH, PD, SB, TD, SL;
 
-    printf("No formulario a seguir escreva as informacoes sobre o seu trabalho\n");
+    while(1){
+        workerData[i] = (int *)malloc(n * sizeof(int));
 
-    printf("Horas trabalhadas no mes: ");
-    scanf("%f", &HT);
+        if (workerData == NULL) {
+            printf("Erro ao alocar memoria\n");
+            return 1;
+        }
 
-    printf("Valor das horas trabalhadas: ");
-    scanf("%f", &VH);
+        if(size == capacity){
+            capacity *= 2;
+            int temp = (int *)realloc(capacity * sizeof(int));
+            
+        }
+      
 
-    printf("Percentual de desconto: ");
-    scanf("%f", &PD);
+        printf("No formulario a seguir escreva as informacoes sobre o seu trabalho\n");
 
-    SB = HT * VH;
-    TD = (PD/100)*SB;
-    SL = SB - TD;
+        printf("Horas trabalhadas no mes: ");
+        scanf("%f", &HT);
 
+        printf("Valor das horas trabalhadas: ");
+        scanf("%f", &VH);
+
+        printf("Percentual de desconto: ");
+        scanf("%f", &PD);
+
+        SB = HT * VH;
+        TD = (PD/100)*SB;
+        SL = SB - TD;
+    }
+    
     printf("Salario Bruto: R$:%.2f\n", SB);
     printf("Desconto: R$:%.2f\n", TD); 
     printf("Salario Líquido: R$:%.2f\n", SL);
