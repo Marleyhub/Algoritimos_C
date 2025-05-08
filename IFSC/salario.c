@@ -14,11 +14,13 @@ Liquido.
 
 int main(){
 
+    // data 
     int *workerData;
     int n, i;
     int size, capacity;
     float HT, VH, PD, SB, TD, SL;
 
+    // loop
     while(1){
         workerData[i] = (int *)malloc(n * sizeof(int));
 
@@ -33,7 +35,7 @@ int main(){
             
         }
       
-
+        
         printf("No formulario a seguir escreva as informacoes sobre o seu trabalho\n");
 
         printf("Horas trabalhadas no mes: ");
@@ -50,6 +52,7 @@ int main(){
         SL = SB - TD;
     }
     
+    //output 
     printf("Salario Bruto: R$:%.2f\n", SB);
     printf("Desconto: R$:%.2f\n", TD); 
     printf("Salario Líquido: R$:%.2f\n", SL);
