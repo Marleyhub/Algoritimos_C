@@ -1,9 +1,3 @@
-/*
-20. Um vendedor necessita de um algoritmo que calcule o preço total devido por um cliente.
-Oalgoritmo deve receber o código de um produto e a quantidade comprada e calcular o preço total,
-
-A tabela de preços deve ser implementada pelo usuário com quantos itens o mesmo quiser.
-*/ 
 
 #include <stdio.h>
 #include <stdlib.h>
