@@ -13,27 +13,28 @@ node *list = NULL;
 
 int createList(){
     for (int i = 0; i < SIZE; i++){
-            node *n = malloc(sizeof(node));
-            if(n == NULL){
-                return 1;
-            }
+        node *n = malloc(sizeof(node));
+        if(n == NULL){
+            return 1;
+        }
 
-            n->value = i + 1;
-            n->next = NULL;
+        n->value = i + 1;
+        n->next = NULL;
 
-            if(list == NULL){
-                list = n;
+        if(list == NULL){
+            list = n;
 
-            } else {
-                for(node *ptr = list; ptr != NULL; ptr = ptr->next){
-                    if (ptr->next == NULL){
-                        ptr->next = n;
-                        break;
-                    }
+        } else {
+            for(node *ptr = list; ptr != NULL; ptr = ptr->next){
+                if (ptr->next == NULL){
+                    ptr->next = n;
+                    break;
                 }
             }
+        }
     }
 }
+
 void printlist(){
     node *ptr = list;
     while(ptr->next != NULL){
