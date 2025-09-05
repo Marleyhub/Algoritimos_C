@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 10
+#define SIZE 31
 
 typedef struct node {
     int number;
@@ -22,6 +22,11 @@ int main (void) {
 
         list = n; // setting list to poits to this instance of node "n" so in the next loop the atribute *next will point to previus node
     }
-    
-        printf("%d", list->number);
+
+        node *ptr = list;
+
+        while(ptr != NULL){
+            printf("%d\n", ptr->number);
+            ptr = ptr->next;
+        }
 }
