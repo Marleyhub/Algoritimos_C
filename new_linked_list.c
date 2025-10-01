@@ -18,7 +18,36 @@ Node* createRList(Node* head, int i){
     return newNode;
 }
 
-void printRlist(Node* head){
+Node* createList(Node* head, int i){
+    Node* newNode = malloc(sizeof(Node));
+
+    if(!newNode){
+        return NULL;
+    }
+
+    newNode->value = i;
+    newNode->next = NULL;
+
+    if(head == NULL){
+        return newNode;
+    }
+
+    Node* current = head;
+    while(current->next != NULL){
+        current = current->next;
+    }
+    current->next = newNode;
+    return head;
+
+}
+void printList(Node* head){
+    Node* current = head;
+    while(current->next != NULL){
+        printf("%d\n", current->value);
+        current = current->next;
+    }
+}
+void printRList(Node* head){
     Node* current = head;
     while(current->next != NULL){
         printf("%d\n", current->value);
@@ -28,11 +57,16 @@ void printRlist(Node* head){
 
 int main (){
     Node* rHead = NULL;
+    Node* head = NULL;
 
     for (int i = 0; i < SIZE; i++){
         rHead = createRList(rHead, i);
     }
+    for (int i = 0; i < SIZE; i++){
+        head = createList(head, i);
+    }
 
-    printRlist(rHead);
+    printRList(rHead);
+    printList(head);
     return 0;
 }
