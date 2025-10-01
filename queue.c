@@ -8,7 +8,7 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
-
+// why i need to pass "**" and in the linked list i dont
 void enqueue(Node** front, Node** rear, int i){
     Node* newNode = malloc(sizeof(Node));
 
@@ -20,9 +20,11 @@ void enqueue(Node** front, Node** rear, int i){
     newNode->value = i;
     newNode->next = NULL;
 
+    // dont understand why the "*" before pointer
     if(*rear == NULL){
         *front = *rear = newNode;
     } else {
+        // ok i know i need "()" to call insede value but what is it really doing?
         (*rear)->next = newNode;
         *rear = newNode;
     }
@@ -42,6 +44,7 @@ int main(){
     Node* rear = NULL;
 
     for (int i = 0; i < SIZE; i++){
+           // Passing the adress of this pointers but i dont get the logic
            enqueue(&front, &rear, i);
     } 
     printQueue(front);
