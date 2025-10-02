@@ -10,26 +10,28 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
-Node* enqueue(Node** front, Node* rear, int i){
+void enqueue(Node** front, Node** rear, int i){
     Node* newNode = malloc(sizeof(Node));
 
     if(!newNode){
         printf("Memory allocation faild");
-        return NULL;
+        return;
     }
 
     newNode->value = i;
     newNode->next = NULL;
-
+    
     if(*front == NULL){
         *front = newNode;
-        rear = *front;
-        return rear;
+        *rear = newNode;
+        return;
     }
-
-    rear->next = newNode;
-    return newNode;
+    
+    (*rear)->next = newNode;
+    *rear = newNode;
+    return;
 }
+
 
 void printQueue(Node* front){
     Node* current = front;
@@ -45,7 +47,7 @@ int main(){
     Node* rear = NULL;
 
     for(int i = 0; i < SIZE; i++){
-        rear = enqueue(&front, rear, i);
+        enqueue(&front, &rear, i);
     }
 
     printQueue(front);
