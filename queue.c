@@ -23,13 +23,22 @@ void enqueue(Node** front, Node** rear, int i){
     }
     newNode->value = i;
     newNode->next = NULL;
-    
+
+    /*
+        If only "front" your are toutching this "Node** front" reference,
+        with "*front" you get the (Node* front) in main
+    */ 
     if(*front == NULL){
         *front = newNode;
         *rear = newNode;
         return;
     }
     
+    /*
+        The "()" is here for priority order it says: 
+        - first dereference "*rear" tha goes to main() and finds "Node* rear".
+        Then after it find the next property of what you found as rear 
+    */ 
     (*rear)->next = newNode;
     *rear = newNode;
     return;
@@ -50,6 +59,7 @@ int main(){
     Node* rear = NULL;
 
     for(int i = 0; i < SIZE; i++){
+        // passing pointers by reference.
         enqueue(&front, &rear, i);
     }
 
