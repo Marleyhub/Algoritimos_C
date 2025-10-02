@@ -73,6 +73,11 @@ int main(){
         dequeue(&front);
     }
 
+    for(int i = 0; i < 5; i++){
+        // passing pointers by reference.
+        enqueue(&front, &rear, i);
+    }
+
     printQueue(front);
     return 0;
 }
