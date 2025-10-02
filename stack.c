@@ -3,6 +3,8 @@
 
 #define SIZE 30
 
+// always create the node struct outside any func
+// next should be always a pointer to struct type Node
 typedef struct Node{
     int value;
     struct Node* next;
@@ -52,12 +54,12 @@ void deStack(Node** top, Node** botton){
         printf("Stack have been deleted\n");
         return;
     }
-    
-    free(tmp);
-    
-    return;
 
+    free(tmp);
+    return;
 }
+
+// Traverses queue and print each one until current be NULL
 void printStack(Node* top){
     Node* current = top;
     while(current->next != NULL){
