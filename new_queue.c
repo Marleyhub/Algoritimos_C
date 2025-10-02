@@ -29,6 +29,24 @@ void enqueue(Node** front, Node** rear, int i){
     return;
 }
 
+void dequeue(Node** front, Node** rear){
+    if(*front == NULL){
+        printf("List is empty");
+        return;
+    }
+
+    Node* tmp = *front;
+    *front = (*front)->next;
+
+    if(*front == NULL){
+        printf("All the list have been deleted\n");
+        return;
+    }
+
+    free(tmp);
+    return;
+}
+
 void printQueue(Node* front){   
     Node* current = front;
     while(current != NULL){
@@ -42,6 +60,14 @@ int main(){
     Node* rear =  NULL;
 
     for (int i = 0; i < SIZE; i++){
+        enqueue(&front, &rear, i);
+    }   
+
+    for (int i = 0; i < SIZE; i++){
+        dequeue(&front, &rear);
+    }   
+
+    for (int i = 0; i < 10; i++){
         enqueue(&front, &rear, i);
     }   
 
