@@ -41,16 +41,29 @@ void enqueue(Node** front, Node** rear, int i){
     return;
 }
 
-void dequeue(Node** front){
+// Still passing by reference
+// If list is empty stop 
+// If not pass actual front to temporary variable to further deleted
+// Sets new front to next at queue
+// delete temp to avoid memory leaks
+void dequeue(Node** front, Node** rear){
+
     if(*front == NULL){
         printf("Empty queue!");
         return;
     }
-
+    Node* tmp = *front;
     *front = (*front)->next;
+
+    if(*front == NULL){
+        *rear == NULL;
+        printf("Queue have been deleted\n");
+        return;
+    }
+    free(tmp);
     return;
 }
-
+// Traverses queue and print each one until current be NULL
 void printQueue(Node* front){
     Node* current = front;
     while(current != NULL){
@@ -69,10 +82,12 @@ int main(){
         enqueue(&front, &rear, i);
     }
     
-    for(int i = 0; i < 10; i++){
-        dequeue(&front);
+    // deleting all list
+    for(int i = 0; i < SIZE; i++){
+        dequeue(&front, &rear);
     }
-
+    
+    // andding new list
     for(int i = 0; i < 5; i++){
         // passing pointers by reference.
         enqueue(&front, &rear, i);
