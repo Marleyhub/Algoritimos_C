@@ -10,7 +10,6 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
-
 // Passing front and rear by reference so its acts the variable at main()
 // If front is null the list is empty so front and rear are equals the new firs node.
 // If not empty go to rear and adds newNode memory adress to next
@@ -23,7 +22,6 @@ void enqueue(Node** front, Node** rear, int i){
     }
     newNode->value = i;
     newNode->next = NULL;
-
     /*
         If only "front" your are toutching this "Node** front" reference,
         with "*front" you get the (Node* front) in main
@@ -33,7 +31,6 @@ void enqueue(Node** front, Node** rear, int i){
         *rear = newNode;
         return;
     }
-    
     /*
         The "()" is here for priority order it says: 
         - first dereference "*rear" tha goes to main() and finds "Node* rear".
@@ -44,6 +41,15 @@ void enqueue(Node** front, Node** rear, int i){
     return;
 }
 
+void dequeue(Node** front){
+    if(*front == NULL){
+        printf("Empty queue!");
+        return;
+    }
+
+    *front = (*front)->next;
+    return;
+}
 
 void printQueue(Node* front){
     Node* current = front;
@@ -61,6 +67,10 @@ int main(){
     for(int i = 0; i < SIZE; i++){
         // passing pointers by reference.
         enqueue(&front, &rear, i);
+    }
+    
+    for(int i = 0; i < 10; i++){
+        dequeue(&front);
     }
 
     printQueue(front);
