@@ -10,6 +10,10 @@ typedef struct Node{
     struct Node* next;
 }Node;
 
+
+// Passing front and rear by reference so its acts the variable at main()
+// If front is null the list is empty so front and rear are equals the new firs node.
+// If not empty go to rear and adds newNode memory adress to next
 void enqueue(Node** front, Node** rear, int i){
     Node* newNode = malloc(sizeof(Node));
 
@@ -17,7 +21,6 @@ void enqueue(Node** front, Node** rear, int i){
         printf("Memory allocation faild");
         return;
     }
-
     newNode->value = i;
     newNode->next = NULL;
     
