@@ -9,7 +9,7 @@ void shellSort(int* vet){
     while(h < SIZE){
         h = h*3 + 1;
         /*
-            At this point we define the gap (h) based into a matetic model,
+            At this point we define the gap (h) based into a matematic model,
             that increases the gap value until it hits one interation aboVe SIZE
             here it could be another matevatic model like logaritimc or simple dived the SIZE BY 2
         */
