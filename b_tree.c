@@ -17,7 +17,7 @@ struct Node* createNode(int item) {
     struct Node *tmp = (struct Node*)malloc(sizeof(struct Node));
     tmp -> key = item;
     tmp -> rigth =  NULL;
-    tmp -> left = NULL;
+    tmp -> left = NULL; // change positions later
 
     return tmp;
 }
